@@ -3,4 +3,8 @@
 Alias: <%=@employee.alias%><br>
 Title: <%=@employee.title%><br>
 Office: <%=@employee.office%><br>
+<%if @employee.dog_id != nil%>
 Dog: <%=Dog.find(@employee.dog_id).name%>
+<%else%>
+Dog: no dog
+<%end%>

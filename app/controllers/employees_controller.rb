@@ -21,8 +21,13 @@ class EmployeesController < ApplicationController
 
     def create
         # @dog = Dog.find(params[:dog_id])
-        @new_employee = Employee.create!(employee_params(params))
-        redirect_to employee_path(@new_employee)
+        @new_employee = Employee.new(employee_params(params))
+        if @new_employee.valid?
+            @new_employee.save
+            redirect_to employee_path(@new_employee)
+        else
+            render :new
+        end
     end
 
     def edit
