@@ -1,0 +1,7 @@
+<h1>Dogs</h1>
+
+<%Dog.all.each do |dog|%>
+    <ul>
+    <li><%=link_to "#{dog.name} #{dog.breed} #{dog.age}", dog_path(dog)%></li>
+    </ul>
+<%end%>

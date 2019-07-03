@@ -1,0 +1,8 @@
+<h1>Employees</h1>
+
+<%Employee.all.each do |employee|%>
+    <ul>
+    <li><%=link_to "#{employee.first_name} #{employee.last_name} #{employee.alias} #{employee.title} #{employee.office} #{employee.dog}", employee_path(employee)%>
+    <%=image_tag employee.img_url if employee.img_url != nil%></li>
+    </ul>
+<%end%>

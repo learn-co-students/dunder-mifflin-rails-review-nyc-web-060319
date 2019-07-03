@@ -1,0 +1,10 @@
+<h1>Create a new employee</h1>
+<%=form_tag '/employees' do%>
+    <label>First name<%=text_field_tag 'employee[first_name]'%></label><br>
+    <label>Last name<%=text_field_tag 'employee[last_name]'%></label><br>
+    <label>Alias<%=text_field_tag 'employee[alias]'%></label><br>
+    <label>Title<%=text_field_tag 'employee[title]'%></label><br>
+    <label>Office<%=text_field_tag 'employee[office]'%></label><br>
+    <label>Doggo<%=select_tag 'employee[dog_id]', options_from_collection_for_select(Dog.all, 'id', 'name') %></label><br>
+    <%=submit_tag 'Create employee'%>
+<%end%>
